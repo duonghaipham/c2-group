@@ -5,7 +5,7 @@
         <link rel="icon" href="images/c2.jpg"/>
         <link rel="stylesheet" href="normalize.css"/>
         <link rel="stylesheet" href="styles.css"/>
-        <link rel="stylesheet" href="general_styles.css"
+        <link rel="stylesheet" href="general_styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -53,55 +53,55 @@
                             <td>1</td>
                             <td>Đàm Hồng Đức</td>
                             <td>Nam</td>
-                            <td><a href="members/duc/duc.html"><img src="members/duc/images/Duc.png" alt="Dam Hong Duc" width="100"></a></td>
+                            <td><a href="members/member.php?identity=19120481"><img src="members/duc/Duc.png" alt="Dam Hong Duc" width="100"></a></td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>Lê Ngọc Du</td>
                             <td>Nam</td>
-                            <td><a href="members/du/du.html"><img src="members/du/images/Du.png" alt="Le Ngoc Du" width="100"></a></td>
+                            <td><a href="members/member.php?identity=19120480"><img src="members/du/Du.png" alt="Le Ngoc Du" width="100"></a></td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>Lưu Trường Dương</td>
                             <td>Nam</td>
-                            <td><a href="members/tduong/tduong.html"><img src="members/tduong/images/Truong Duong.png" alt="Luu Truong Duong" width="100"></a></td>
+                            <td><a href="members/member.php?identity=19120489"><img src="members/tduong/TruongDuong.png" alt="Luu Truong Duong" width="100"></a></td>
                         </tr>
                         <tr>
                             <td>4</td>
                             <td>Phạm Hải Dương</td>
                             <td>Nam</td>
-                            <td><a href="members/hduong/hduong.html"><img src="members/hduong/images/Hai Duong.png" alt="Pham Hai Duong" width="100"></a></td>
+                            <td><a href="members/member.php?identity=19120490"><img src="members/hduong/HaiDuong.png" alt="Pham Hai Duong" width="100"></a></td>
                         </tr>
                         <tr>
                             <td>5</td>
                             <td>Hồ Đắc Duy</td>
                             <td>Nam</td>
-                            <td><a href="members/duy/duy.html"><img src="members/duy/images/Duy.png" alt="Ho Dac Duy" width="100"></a></td>
+                            <td><a href="members/member.php?identity=19120493"><img src="members/duy/Duy.png" alt="Ho Dac Duy" width="100"></a></td>
                         </tr>
                         <tr>
                             <td>6</td>
                             <td>Nguyễn Lê Thanh Hằng</td>
                             <td>Nữ</td>
-                            <td><a href="members/hang/hang.html"><img src="members/hang/images/Hang.png" alt="Nguyen Le Thanh Hang" width="100"></a></td>
+                            <td><a href="members/member.php?identity=19120499"><img src="members/hang/Hang.png" alt="Nguyen Le Thanh Hang" width="100"></a></td>
                         </tr>
                         <tr>
                             <td>7</td>
                             <td>Nguyễn Thanh Hiền</td>
                             <td>Nữ</td>
-                            <td><a href="members/hien/hien.html"><img src="members/hien/images/Hien.png" alt="Nguyen Thanh Hien" width="100"></a></td>
+                            <td><a href="members/member.php?identity=19120503"><img src="members/hien/Hien.png" alt="Nguyen Thanh Hien" width="100"></a></td>
                         </tr>
                         <tr>
                             <td>8</td>
                             <td>Nguyễn Huy Hoàng</td>
                             <td>Nam</td>
-                            <td><a href="members/hhoang/hhoang.html"><img src="members/hhoang/images/Huy Hoang.png" alt="Nguyen Huy Hoang" width="100"></a></td>
+                            <td><a href="members/member.php?identity=19120515"><img src="members/hhoang/HuyHoang.png" alt="Nguyen Huy Hoang" width="100"></a></td>
                         </tr>
                         <tr>
                             <td>9</td>
                             <td>Trương Văn Hoàng</td>
                             <td>Nam</td>
-                            <td><a href="members/vhoang/vhoang.html"><img src="members/vhoang/images/Hoang.png" alt="Truong Van Hoang" width="100"></a></td>
+                            <td><a href="members/member.php?identity=19120517"><img src="members/vhoang/Hoang.png" alt="Truong Van Hoang" width="100"></a></td>
                         </tr>
                     </table>
                 </div>
