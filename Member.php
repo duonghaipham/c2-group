@@ -3,6 +3,7 @@
     class Member {
         private $identity;
         private $name;
+        private $gender;
         private $email;
         private $hometown;
         private $hobby;
@@ -12,20 +13,23 @@
          * Member constructor.
          * @param $identity
          * @param $name
+         * @param $gender
          * @param $email
          * @param $hometown
          * @param $hobby
          * @param $avatar
          */
-        public function __construct($identity, $name, $email, $hometown, $hobby, $avatar)
+        public function __construct($identity, $name, $gender, $email, $hometown, $hobby, $avatar)
         {
             $this->identity = $identity;
             $this->name = $name;
+            $this->gender = $gender;
             $this->email = $email;
             $this->hometown = $hometown;
             $this->hobby = $hobby;
             $this->avatar = $avatar;
         }
+
 
         /**
          * @return mixed
@@ -57,6 +61,22 @@
         public function setName($name): void
         {
             $this->name = $name;
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getGender()
+        {
+            return $this->gender;
+        }
+
+        /**
+         * @param mixed $gender
+         */
+        public function setGender($gender): void
+        {
+            $this->gender = $gender;
         }
 
         /**

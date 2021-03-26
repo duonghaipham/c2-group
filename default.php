@@ -49,60 +49,36 @@
                             <th>Giới tính</th>
                             <th>Ảnh đại diện</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Đàm Hồng Đức</td>
-                            <td>Nam</td>
-                            <td><a href="members/member.php?identity=19120481"><img src="members/duc/Duc.png" alt="Dam Hong Duc" width="100"></a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Lê Ngọc Du</td>
-                            <td>Nam</td>
-                            <td><a href="members/member.php?identity=19120480"><img src="members/du/Du.png" alt="Le Ngoc Du" width="100"></a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Lưu Trường Dương</td>
-                            <td>Nam</td>
-                            <td><a href="members/member.php?identity=19120489"><img src="members/tduong/TruongDuong.png" alt="Luu Truong Duong" width="100"></a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Phạm Hải Dương</td>
-                            <td>Nam</td>
-                            <td><a href="members/member.php?identity=19120490"><img src="members/hduong/HaiDuong.png" alt="Pham Hai Duong" width="100"></a></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Hồ Đắc Duy</td>
-                            <td>Nam</td>
-                            <td><a href="members/member.php?identity=19120493"><img src="members/duy/Duy.png" alt="Ho Dac Duy" width="100"></a></td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Nguyễn Lê Thanh Hằng</td>
-                            <td>Nữ</td>
-                            <td><a href="members/member.php?identity=19120499"><img src="members/hang/Hang.png" alt="Nguyen Le Thanh Hang" width="100"></a></td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Nguyễn Thanh Hiền</td>
-                            <td>Nữ</td>
-                            <td><a href="members/member.php?identity=19120503"><img src="members/hien/Hien.png" alt="Nguyen Thanh Hien" width="100"></a></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Nguyễn Huy Hoàng</td>
-                            <td>Nam</td>
-                            <td><a href="members/member.php?identity=19120515"><img src="members/hhoang/HuyHoang.png" alt="Nguyen Huy Hoang" width="100"></a></td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Trương Văn Hoàng</td>
-                            <td>Nam</td>
-                            <td><a href="members/member.php?identity=19120517"><img src="members/vhoang/Hoang.png" alt="Truong Van Hoang" width="100"></a></td>
-                        </tr>
+                        <?php
+                            require_once("Member.php");
+
+                            $server_name = "localhost";
+                            $username = "root";
+                            $password = "";
+                            $database_name = "c2_group";
+
+                            $connection = new mysqli($server_name, $username, $password, $database_name);
+                            if ($connection->connect_error) {
+                                die("Connection failed " . $connection->connect_error);
+                            }
+
+                            $query = "SELECT identity, name, gender, avatar FROM member";
+                            $result = $connection->query($query);
+
+                            if ($result->num_rows > 0) {
+                                $ordinal_number = 1;
+                                while ($row = $result->fetch_assoc()) {
+                                    $url_page = "members/member.php?identity=" . $row["identity"];
+                                    $img_src = "members/" . $row["avatar"];
+                                    echo "<tr><td>" . $ordinal_number . "</td>" .
+                                         "<td>" . $row["name"] . "</td>" .
+                                         "<td>" . $row["gender"] . "</td>" .
+                                         "<td><a href=$url_page><img src=$img_src width=100px></a></td></tr>";
+                                    $ordinal_number++;
+                                }
+                            }
+                            $connection->close();
+                        ?>
                     </table>
                 </div>
                 <hr/>

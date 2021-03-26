@@ -18,9 +18,10 @@
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $current_member = new Member($row["name"], $row["identity"], $row["email"], $row["hometown"], $row["hobby"], $row["avatar"]);
+            $current_member = new Member($row["identity"], $row["name"], $row["gender"], $row["email"], $row["hometown"], $row["hobby"], $row["avatar"]);
         }
     }
+    $connection->close();
 ?>
 
 <!DOCTYPE html>
