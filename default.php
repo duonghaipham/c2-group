@@ -6,12 +6,27 @@
         <link rel="stylesheet" href="normalize.css"/>
         <link rel="stylesheet" href="styles.css"/>
         <link rel="stylesheet" href="general_styles.css">
+        <link rel="stylesheet" href="login/login_styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="login/login.js"></script>
         <title>NHÓM C2</title>
     </head>
     <body>
+        <div id="popup" class="modal">
+            <form class="modal-content animate" method="POST">
+                <div id="container">
+                    <span id="close" onClick="closeLogin()">&times;</span>
+                    <input type="text" placeholder="Tên đăng nhập" name="username" required>
+                    <input type="password" placeholder="Mật khẩu" name="password" required>
+                    <button type="submit">Đăng nhập</button>
+                    <label>
+                        <input type="checkbox" checked>Nhớ tên tài khoản
+                    </label>
+                </div>
+            </form>
+        </div>
         <div id="banner">
         </div>
         <div id="navbar">
@@ -19,6 +34,7 @@
             <a href="#main">Nội dung</a>
             <a href="#about">Qui định</a>
             <a href="#logo">Logo</a>
+            <a onclick="showLogin()">Đăng nhập</a>
         </div>
         <div id="content">
             <div id="content-1">
