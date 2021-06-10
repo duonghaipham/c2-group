@@ -2,15 +2,15 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <link rel="icon" href="images/c2.jpg"/>
-        <link rel="stylesheet" href="normalize.css"/>
-        <link rel="stylesheet" href="styles.css"/>
-        <link rel="stylesheet" href="general_styles.css">
-        <link rel="stylesheet" href="login/login_styles.css">
+        <link rel="icon" href="../public/img/c2.jpg"/>
+        <link rel="stylesheet" href="../public/css/normalize.css"/>
+        <link rel="stylesheet" href="../public/css/home.css"/>
+        <link rel="stylesheet" href="../public/css/general.css">
+        <link rel="stylesheet" href="../public/css/login.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script type="text/javascript" src="login/login.js"></script>
+        <script type="text/javascript" src="../public/js/login.js"></script>
         <title>NHÓM C2</title>
     </head>
     <body>
@@ -42,7 +42,7 @@
             </div>
             <div id="content-2">
                 <figure>
-                    <img src="images/background.jpg" alt="An image of my team" width="700">
+                    <img src="../public/img/background.jpg" alt="An image of my team" width="700">
                     <figcaption>Sinh viên công nghệ mà nhìn như đám cái bang</figcaption>
                 </figure>
                 <div id="information" class="section">
@@ -65,36 +65,6 @@
                             <th>Giới tính</th>
                             <th>Ảnh đại diện</th>
                         </tr>
-                        <?php
-                            require_once("Member.php");
-
-                            $server_name = "localhost";
-                            $username = "root";
-                            $password = "";
-                            $database_name = "c2_group";
-
-                            $connection = new mysqli($server_name, $username, $password, $database_name);
-                            if ($connection->connect_error) {
-                                die("Connection failed " . $connection->connect_error);
-                            }
-
-                            $query = "SELECT identity, name, gender, avatar FROM member";
-                            $result = $connection->query($query);
-
-                            if ($result->num_rows > 0) {
-                                $ordinal_number = 1;
-                                while ($row = $result->fetch_assoc()) {
-                                    $url_page = "members/member.php?identity=" . $row["identity"];
-                                    $img_src = "members/" . $row["avatar"];
-                                    echo "<tr><td>" . $ordinal_number . "</td>" .
-                                         "<td>" . $row["name"] . "</td>" .
-                                         "<td>" . $row["gender"] . "</td>" .
-                                         "<td><a href=$url_page><img src=$img_src width=100px></a></td></tr>";
-                                    $ordinal_number++;
-                                }
-                            }
-                            $connection->close();
-                        ?>
                     </table>
                 </div>
                 <hr/>
@@ -150,7 +120,7 @@
                 <div id="logo" class="section">
                     <h1>Logo</h1>
                     <figure>
-                        <img src="images/c2.jpg" alt="Image of group's logo" width="200">
+                        <img src="../public/img/c2.jpg" alt="Image of group's logo" width="200">
                         <figcaption>Logo nhóm</figcaption>
                     </figure>
                     <ul>
