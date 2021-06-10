@@ -1,59 +1,97 @@
-#banner {
-    background: url("../img/banner.jpg");
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-    height: 150px;
-    width: 100%;
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* navbar */
 #navbar {
+    position: fixed;
+    top: 0;
     background-color: #1625c5;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-    overflow: hidden;
     width: 100%;
 }
 
-#navbar a {
-    color: #FFFFFF;
-    display: block;
-    float: left;
-    padding: 15px 30px 15px 30px;
-    text-decoration: none;
+#navbar img {
+    fill: #fff;
+    display: none;
+    width: 20px;
+}
+
+#navbar #navbar-container {
+    display: flex;
+    list-style-type: none;
+    margin: 0 3%;
+}
+
+#navbar #navbar-container li {
+    padding: 10px 20px;
+}
+
+#navbar #navbar-container li a {
+    color: #fff;
     text-transform: uppercase;
 }
 
-#navbar > a:hover {
-    background-color: #FFFFFF;
-    color: #000000;
+#navbar #navbar-container li:hover {
+    background-color: #fff;
     cursor: pointer;
 }
 
+#navbar #navbar-container li:hover > a {
+    color: #000;
+}
+
+/* footer */
 #footer {
-    align-items: center;
-    background-color: #d4d4e7;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     display: flex;
     flex-direction: column;
-    height: fit-content;
+    align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    padding: 25px;
+    padding: 20px 0;
+    background-color: #00254d;
+    color: #fff;
+    font-family: 'Open Sans';
 }
 
 #footer p {
-    color: #41414C;
     margin: 0 0 10px 0;
 }
 
 #footer #social-networking {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 #footer #social-networking .sns-item {
-    color: #41414C;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 15px;
     text-decoration: none;
+}
+
+#footer #social-networking .sns-item i,
+#footer #social-networking .sns-item span {
+    color: #fff;
+}
+
+@media screen and (max-width: 540px) {
+    #navbar img {
+        display: block;
+    }
+
+    #navbar #navbar-container {
+        display: none;
+    }
+
+    #footer {
+        padding: 10px 0;
+    }
+
+    #footer #social-networking {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
 }

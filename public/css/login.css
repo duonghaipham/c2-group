@@ -1,72 +1,78 @@
-.modal {
-    display: none;
-    margin: auto;
-    overflow: auto;
-    position: fixed;
-    text-align: center;
-    z-index: 1;
+html, body {
+    background-color: #f0f2f5;
+    font-family: 'Open Sans';
+    font-size: 18px;
 }
 
-.modal .modal-content {
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-    width: 500px;
-}
-
-.modal .modal-content #container {
-    border-radius: 10px;
+.full-screen {
     display: flex;
-    flex-direction: column;
-    padding: 0 25px 25px 25px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.modal .modal-content #container #close {
-    align-self: flex-end;
-    margin-bottom: 10px;
+.full-screen .container {
+    width: 20rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
 }
 
-.modal .modal-content #container #close:hover {
-    color: #FF0000;
-    cursor: pointer;
+.full-screen .container .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    padding: 1rem;
+    background-color: #fff;
 }
 
-input[type="text"], input[type="password"] {
-    border-style: solid;
-    border-color: #ADADC9;
-    border-radius: 10px;
-    color: #666666;
+.full-screen .container .header img {
+    width: 30%;
+    margin-right: 0.5rem;
+}
+
+.full-screen .container .header h1 {
+    margin-left: 0.5rem;
+    opacity: 0.9;
+}
+
+.full-screen .container form {
+    margin: 0 auto;
+    width: 90%;
+    padding: 1rem;
+    background-color: #f7f7f7;
+}
+
+.full-screen .container form input[type="text"],
+.full-screen .container form input[type="password"] {
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid #adadc9;
+    border-radius: 5px;
     margin-bottom: 15px;
     padding: 15px;
+    width: 100%;
+    font-size: 18px;
 }
 
-input[type="text"], input[type="password"]:placeholder {
-    opacity: 1;
-}
-
-#container > input:focus {
+.full-screen .container form input:focus {
     outline: none !important;
     border-color: #1877F2;
 }
 
-#container button {
+.full-screen .container form button {
     background-color: #1877F2;
     border: none;
-    border-radius: inherit;
-    color: #FFFFFF;
-    margin-bottom: 15px;
+    border-radius: 5px;
+    color: #fff;
     padding: 15px;
+    width: 100%;
+    font-size: 18px;
 }
 
-#container label input {
-    color: #464646;
-    margin-right: 5px;
-}
-
-.animate {
-    animation: animationzoom 0.5s;
-}
-
-@keyframes animationzoom {
-    from { transform: scale(0) } 
-    to { transform: scale(1) }
+@media screen and (max-width: 540px) {
+    .full-screen .container {
+        width: 17rem;
+    }
 }

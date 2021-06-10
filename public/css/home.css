@@ -6,9 +6,7 @@ body {
     font-family: "Roboto", "sans-serif";
     font-size: 20px;
     line-height: 35px;
-    margin: 0 auto;
     text-align: justify;
-    width: 80%;
 }
 
 h1 {
@@ -29,43 +27,26 @@ ol, ul {
 }
 
 #content {
-    display: table;
-    height: fit-content;
-    margin: 0 auto;
-    width: 100%;
-}
-
-#content #content-1 {
-    background-color: #3671DC;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-    display: table-cell;
-    height: 400vh;
-    margin: 0;
-    width: 20%;
-}
-
-#content #content-2 {
-    display: table-cell;
     padding: 0 0 25px 25px;
     width: 70%;
 }
 
-#content #content-2 figure {
+#content figure {
     text-align: center;
 }
 
-#content #content-2 > figure img {
+#content > figure img {
     width: 100%;
     height: auto;
 }
 
-#content #content-2 #information > a {
+#content #information > a {
     color: #E3242B;
     font-style: italic;
     text-decoration: none;
 }
 
-#content #content-2 #members > table {
+#content #members > table {
     border-collapse: collapse;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     margin: 0 auto;
@@ -73,11 +54,11 @@ ol, ul {
     width: 100%;
 }
 
-#content #content-2 #members > table tr:nth-child(even) {
+#content #members > table tr:nth-child(even) {
     background-color: #F2F2F2;
 }
 
-#content #content-2 #members > table tr th {
+#content #members > table tr th {
     background-color: #4CAF50;
     color: #FFFFFF;
     font-weight: lighter;
