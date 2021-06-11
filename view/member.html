@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <link rel="icon" href="../public/img/c2.jpg"/>
-        <link rel="stylesheet" href="../public/css/general.css"/>
-        <link rel="stylesheet" href="../public/css/member.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div id="banner">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/css/general.css">
+    <link rel="stylesheet" href="../public/css/member.css">
+    <link rel="icon" href="../public/img/c2.jpg">
+    <title>Trang chủ</title>
+</head>
+<body>
+    <div id="navbar">
+        <img src="../public/svg/menu.svg" alt="Open menu" id="btn-menu">
+        <ul id="navbar-container">
+            <li><a href="./work.html">C2G</a></li>
+            <li><a href="./member.html">Thành viên</a></li>
+            <li><a href="./notification.html">Thông báo</a></li>
+            <li><a href="./about.html">Về chúng tôi</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="members">
+            <h1>Thành viên</h1>
+            <table>
+                <tr>
+                    <th>Số thứ tự</th>
+                    <th>Tên</th>
+                    <th>Giới tính</th>
+                    <th>Ảnh đại diện</th>
+                </tr>
+            </table>
         </div>
-        <div id="navbar">
-            <a href="home.html">Trang chủ</a>
+    </div>
+    <div id="footer">
+        <p>Developed by Tyler &#169; 2021</p>
+        <div id="social-networking">
+            <a class="sns-item" href="https://www.facebook.com/duong2001.ph">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a class="sns-item" href="https://twitter.com/duongphamit">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a class="sns-item" href="https://github.com/phduong2001">
+                <i class="fa fa-github"></i>
+            </a>
+            <a class="sns-item" href="mailto:phduongit2k1@gmail.com">
+                <i class="	fa fa-mail-forward"></i>
+            </a>
         </div>
-        <div id="overview">
-            <figure id="avatar">
-                <img src="" alt="Avatar">
-                <figcaption>Ảnh đại diện</figcaption>
-            </figure>
-            <div id="information">
-                <ul>
-                    <li>Họ tên: Phạm Hải Dương</li>
-                    <li>MSSV: 19120490</li>
-                    <li>Email: duonghaipham2001@gmail.com</li>
-                    <li>Quê quán: Đồng Tháp</li>
-                    <li>Sở thích: Xem phim</li>
-                </ul>
-            </div>
-        </div>
-        <div id="footer">
-            <p>Designed by Tyler &#169; 2021</p>
-            <div id="social-networking">
-                <a class="sns-item" href="https://www.facebook.com/duong2001.ph">
-                    <i class="fa fa-facebook-square"></i>
-                    <span>Facebook</span>
-                </a>
-                <a class="sns-item" href="https://twitter.com/duongphamit">
-                    <i class="fa fa-twitter-square"></i>
-                    <span>Twitter</span>
-                </a>
-                <a class="sns-item" href="https://github.com/phduong2001">
-                    <i class="fa fa-github-square"></i>
-                    <span>GitHub</span>
-                </a>
-                <a class="sns-item" href="mailto:phduongit2k1@gmail.com">
-                    <i class="fa fa-envelope"></i>
-                    <span>Mail</span>
-                </a>
-            </div>
-        </div>
-    </body>
+    </div>
+    <script src="../public/js/main.js"></script>
+</body>
 </html>

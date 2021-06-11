@@ -1,7 +1,6 @@
 html, body {
     background-color: #f0f2f5;
     font-family: 'Open Sans';
-    font-size: 18px;
 }
 
 .full-screen {
@@ -13,7 +12,7 @@ html, body {
 
 .full-screen .container {
     width: 20rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .full-screen .container .header {
@@ -49,9 +48,8 @@ html, body {
     box-sizing: border-box;
     display: block;
     border: 1px solid #adadc9;
-    border-radius: 5px;
     margin-bottom: 15px;
-    padding: 15px;
+    padding: 10px 15px;
     width: 100%;
     font-size: 18px;
 }
@@ -64,11 +62,11 @@ html, body {
 .full-screen .container form button {
     background-color: #1877F2;
     border: none;
-    border-radius: 5px;
     color: #fff;
     padding: 15px;
     width: 100%;
     font-size: 18px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 540px) {
