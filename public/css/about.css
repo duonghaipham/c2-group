@@ -13,7 +13,7 @@ body {
 
 #content h1 {
     color: #353535;
-    font-size: 26px;
+    font-size: 1.25rem;
     width: 100%;
 }
 
@@ -47,7 +47,7 @@ figure img {
 }
 
 #content #rule #rule-container #principle h2 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 #content #rule #rule-container #principle #work {
@@ -116,12 +116,15 @@ figure img {
 }
 
 #content #rule #plan #discussion {
+    border: 1.5px solid #e1e4e8;
+    border-radius: 10px;
+    background-color: #f7f7f7;
     list-style: none;
-    padding: 0;
+    padding: 1rem 1.5rem;
 }
 
 #content #rule #plan #discussion li {
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;
 }
 
 #content #rule #plan #discussion li span {

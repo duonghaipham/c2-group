@@ -1,0 +1,78 @@
+#overview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 5%;
+    background: #f4f4f4;
+    height: 75vh;
+    font-family: 'Loew Heavy';
+}
+
+#overview img {
+    width: 25%;
+    height: auto;
+}
+
+#overview #information {
+    margin-left: 5rem;
+    color: #24292e;
+}
+
+#overview #information h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+#overview #information button {
+    color: #fff;
+    background-color: #24292e;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-family: "Montserrat";
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+
+#overview #information #profile-detail {
+    display: none;
+    line-height: 2.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+#overview #information ul li {
+    font-size: 1.1rem;
+}
+
+#overview #information ul li #id::before {
+    content: "\f007";
+    margin-right: 1rem;
+}
+
+#overview #information ul li #mail::before {
+    content: "\f064";
+    margin-right: 1rem;
+}
+
+#overview #information ul li #home::before {
+    content: "\f015";
+    margin-right: 1rem;
+}
+
+#overview #information ul li #hobby::before {
+    content: "\f004";
+    margin-right: 1rem;
+}
+
+@media only screen and (max-width: 540px) {
+    #overview img {
+        width: 70%;
+    }
+
+    #overview #information {
+        margin-left: 0;
+    }
+}
