@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../public/css/general.css">
-    <link rel="stylesheet" href="../public/css/member.css">
+    <link rel="stylesheet" href="../public/css/work.css">
     <link rel="icon" href="../public/img/c2.jpg">
-    <title>Trang chủ</title>
+    <title>Về chúng tôi</title>
 </head>
 <body>
     <div id="navbar">
@@ -21,28 +21,15 @@
         </ul>
     </div>
     <div id="content">
-        <div id="members">
-            <h1>Danh sách thành viên</h1>
-            <table>
-                <tr>
-                    <th>STT</th>
-                    <th>Họ tên</th>
-                    <th>Giới tính</th>
-                    <th>Avatar</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Đàm Hồng Đức</td>
-                    <td>Nam</td>
-                    <td><a href="./profile.html"><img src="../data/img/Duc.png" alt="Duc"></a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Lê Ngọc Du</td>
-                    <td>Nam</td>
-                    <td><a href="./profile.html"><img src="../data/img/Du.png" alt="Du"></a></td>
-                </tr>
-            </table>
+        <div id="tab">
+            <button class="tab-link" id="btn-stream">Quá trình</button>
+            <button class="tab-link" id="btn-work">Công việc</button>
+        </div>
+        <div class="tab-content" id="stream">
+            This is stream
+        </div>
+        <div class="tab-content" id="work">
+            This is work
         </div>
     </div>
     <div id="footer">
@@ -58,10 +45,11 @@
                 <i class="fa fa-github"></i>
             </a>
             <a class="sns-item" href="mailto:phduongit2k1@gmail.com">
-                <i class="fa fa-mail-forward"></i>
+                <i class="	fa fa-mail-forward"></i>
             </a>
         </div>
     </div>
     <script src="../public/js/main.js"></script>
+    <script src="../public/js/home.js"></script>
 </body>
 </html>

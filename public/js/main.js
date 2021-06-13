@@ -1,3 +1,4 @@
+// Click on menu handler
 const btnMenu = document.getElementById("btn-menu");
 btnMenu.addEventListener("click", () => {
     const navbarContainer = document.getElementById("navbar-container");
