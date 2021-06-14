@@ -32,3 +32,179 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+#content #stream #stream-container {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0;
+}
+
+#content #stream #stream-container #due-work {
+    border: 1.5px solid #e1e4e8;
+    border-radius: 7px;
+    padding: 1rem;
+    width: 20%;
+    height: fit-content;
+}
+
+#content #stream #stream-container #due-work h3 {
+    margin: 0;
+}
+
+#content #stream #stream-container #due-work ul {
+    padding: 0;
+    list-style-type: none;
+    line-height: 1.5rem;
+}
+
+#content #stream #stream-container #due-work button {
+    float: right;
+    border: none;
+    background: none;
+    color: #1967d2;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#content #stream #stream-container #feed {
+    width: 80%;
+    padding-left: 1rem;
+}
+
+#content #stream #stream-container #feed #create-post {
+    border: 1.5px solid #e1e4e8;
+    border-radius: 7px;
+    padding: 1.5rem;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+}
+
+#content #stream #stream-container #feed #create-post form textarea {
+    resize: none;
+    box-sizing: border-box;
+    border-style: none none solid none;
+    outline: none;
+    background-color: #f8f9fa;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    width: 100%;
+    height: 150px;
+}
+
+#content #stream #stream-container #feed #create-post form textarea:focus {
+    border-bottom: 2px solid #24292e;
+}
+
+#content #stream #stream-container #feed #create-post form #preview {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 9fr;
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    margin-top: 0.75rem;
+    padding: 1rem 0.5rem;
+}
+
+#content #stream #stream-container #feed #create-post form #preview #remove-file {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    cursor: pointer;
+}
+
+#content #stream #stream-container #feed #create-post form #preview img {
+    width: 3rem;
+    margin: auto;
+}
+
+#content #stream #stream-container #feed #create-post form #preview #file-name {
+    text-align: left;
+    overflow: hidden;
+}
+
+#content #stream #stream-container #feed #create-post form #insert {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+}
+
+#content #stream #stream-container #feed #create-post form #insert label {
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+}
+
+#content #stream #stream-container #feed #create-post form #insert label i::before {
+    content: "\f0c6";
+}
+
+#content #stream #stream-container #feed #create-post form #insert input {
+    display: none;
+}
+
+#content #stream #stream-container #feed #create-post form #insert button {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #24292e;
+    color: #fff;
+}
+
+#content #stream #stream-container #feed #list-post {
+    padding: 1rem 0;
+}
+
+#content #stream #stream-container #feed #list-post .single-post {
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .owner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .owner img {
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .owner .further-info {
+    margin-left: 0.75rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .owner .further-info .name {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .owner .further-info .time {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+@media only screen and (max-width: 540px) {
+    #content #stream #stream-container {
+        flex-direction: column;
+    }
+
+    #content #stream #stream-container #due-work {
+        width: auto;
+    }
+
+    #content #stream #stream-container #feed {
+        width: auto;
+    }
+
+    #content #stream #stream-container #feed {
+        padding-top: 1rem;
+        padding-left: 0;
+    }
+}

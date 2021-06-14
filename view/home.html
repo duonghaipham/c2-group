@@ -26,7 +26,42 @@
             <button class="tab-link" id="btn-work">Công việc</button>
         </div>
         <div class="tab-content" id="stream">
-            This is stream
+            <div id="stream-container">
+                <div id="due-work">
+                    <h3>Deadline</h3>
+                    <ul>
+                        <li><a href="#">Nộp video demo</a></li>
+                        <li><a href="#">Nộp báo cáo tuần</a></li>
+                    </ul>
+                    <button type="button">Xem việc...</button>
+                </div>
+                <div id="feed">
+                    <div id="create-post">
+                        <form method="POST" enctype="multipart/form-data">
+                            <textarea name="post" placeholder="Bạn muốn thảo luận điều gì?"></textarea>
+                            <div id="insert">
+                                <label for="input-file"><i class="fa"></i> Thêm</label>
+                                <input type="file" name="pin-file" id="input-file">
+                                <button type="submit">Đăng</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="list-post">
+                        <div class="single-post">
+                            <div class="owner">
+                                <img src="../data/img/HaiDuong.png" alt="Avatar">
+                                <div class="further-info">
+                                    <p class="name">Dương Phạm Hải</p>
+                                    <p class="time">Hôm qua</p>
+                                </div>
+                            </div>
+                            <div class="main-post">
+                                <p>Nội dung bài đăng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="tab-content" id="work">
             This is work
