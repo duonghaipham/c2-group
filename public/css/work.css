@@ -136,10 +136,15 @@
     border-radius: 5px;
     padding: 0.5rem 1.5rem;
     font-size: 0.8rem;
+    cursor: pointer;
 }
 
 #content #stream #stream-container #feed #create-post form #insert label i::before {
     content: "\f0c6";
+}
+
+#content #stream #stream-container #feed #create-post form #insert label:hover {
+    background-color: #f3f3f3;
 }
 
 #content #stream #stream-container #feed #create-post form #insert input {
@@ -153,6 +158,11 @@
     border-radius: 5px;
     background-color: #24292e;
     color: #fff;
+    cursor: pointer;
+}
+
+#content #stream #stream-container #feed #create-post form #insert button:hover {
+    background-color: #414549;
 }
 
 #content #stream #stream-container #feed #list-post {
@@ -183,11 +193,95 @@
 #content #stream #stream-container #feed #list-post .single-post .owner .further-info .name {
     margin: 0;
     font-size: 0.9rem;
+    font-weight: 600;
 }
 
 #content #stream #stream-container #feed #list-post .single-post .owner .further-info .time {
     margin: 0;
     font-size: 0.75rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post hr {
+    margin: 0 -1.5rem 1.5rem;
+    border: none;
+    height: 1px;
+    background-color: #e1e4e8;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .single-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .single-comment .cmt-body {
+    margin-left: 0.75rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .single-comment .cmt-body .cmt-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .single-comment .cmt-body .cmt-header .cmt-name {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+} 
+
+#content #stream #stream-container #feed #list-post .single-post .single-comment .cmt-body .cmt-header .cmt-time {
+    margin: 0 0 0 0.5rem;
+    color: #757779;
+    font-size: 0.7rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .single-comment .cmt-body .cmt-content {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .my-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#content #stream #stream-container #feed #list-post .single-post img {
+    width: 2.2rem;
+    border-radius: 50%;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment {
+    position: relative;
+    margin-left: 0.75rem;
+    flex-grow: 1;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment input[type="text"] {
+    box-sizing: border-box;
+    border: 1px solid #e1e4e8;
+    border-radius: 20px;
+    padding: 0.65rem;
+    outline: none;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment input[type="text"]:focus {
+    border: 2px solid #24292e;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment input[type="submit"] {
+    display: none;
+}
+
+#content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment button i::before {
+    content: "\f1d9";
+    font-size: 1rem;
 }
 
 @media only screen and (max-width: 540px) {
