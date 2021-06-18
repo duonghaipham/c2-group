@@ -1,5 +1,5 @@
 #content {
-    padding: 4rem 5%;
+    padding: 4rem 5% 2rem;
 }
 
 #content #tab {
@@ -272,7 +272,7 @@
 }
 
 #content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment input[type="text"]:focus {
-    border: 2px solid #24292e;
+    border: 1.5px solid #24292e;
 }
 
 #content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment input[type="submit"] {
@@ -282,6 +282,68 @@
 #content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment button i::before {
     content: "\f1d9";
     font-size: 1rem;
+}
+
+#content #work #work-container {
+    padding: 1rem 0;
+}
+
+#content #work #work-container #btn-create-work {
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    padding: 0.75rem 1rem;
+    background-color: #24292e;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+
+#content #work #work-container #btn-create-work::before {
+    content: "+";
+    margin-right: 0.75rem;
+}
+
+#content #work #work-container #list-create {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    padding: 0;
+    background-color: #fff;
+}
+
+#content #work #work-container #list-create li {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+}
+
+#content #work #work-container #list-create li:hover {
+    background-color: #ebebeb;
+}
+
+#content #work #work-container #list-create li a {
+    color: #000;
+    text-decoration: none;
+}
+
+#content #work #work-container #list-create li a #quiz::before {
+    content: "\f29c";
+    margin-right: 1rem;
+}
+
+#content #work #work-container #list-create li a #doc::before {
+    content: "\f0f6";
+    margin-right: 1rem;
+}
+
+#content #work #work-container #list-create li a #task::before {
+    content: "\f0ae";
+    margin-right: 1rem;
 }
 
 @media only screen and (max-width: 540px) {

@@ -60,3 +60,17 @@ inputFile.addEventListener("change", (event) => {
         });
     }
 });
+
+// Show create pop-up
+const btnCreateWork = document.getElementById("btn-create-work");
+btnCreateWork.addEventListener("click", () => {
+    const popUpCreate = document.getElementById("list-create");
+    if (popUpCreate.style.display === "block") {
+        popUpCreate.style.display = "none";
+        btnCreateWork.style.opacity = "1"
+    }
+    else {
+        popUpCreate.style.display = "block";
+        btnCreateWork.style.opacity = "0.8";
+    }
+});
