@@ -1,0 +1,79 @@
+#content {
+    padding: 4rem 5% 2rem;
+}
+
+#content h1 {
+    margin-top: 0;
+    color: #24292e;
+    font-family: 'Loew Heavy';
+    font-size: 1.5rem;
+}
+
+#content form {
+    width: 100%;
+}
+
+#content form input[type="text"],
+#content form textarea {
+    display: block;
+    box-sizing: border-box;
+    border-style: none none solid none;
+    border-bottom-width: 1px;
+    padding: 1rem;
+    outline: none;
+    background-color: #f8f9fa;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+#content form input[type="text"] {
+    margin-bottom: 1rem;
+}
+
+#content form input[type="text"]:focus,
+#content form textarea:focus {
+    border-bottom-width: 2px;
+}
+
+#content form textarea {
+    resize: none;
+    font-family: 'Roboto';
+    margin-bottom: 1rem;
+    height: 10rem;
+}
+
+#content form #insert {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#content form #insert label {
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+#content form #insert label i::before {
+    content: "\f0c6";
+}
+
+#content form #insert label:hover {
+    background-color: #f3f3f3;
+}
+
+#content form #insert input[type="file"] {
+    display: none;
+}
+
+#content form #insert button {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #24292e;
+    color: #fff;
+    cursor: pointer;
+}
