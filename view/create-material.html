@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../public/css/general.css">
     <link rel="stylesheet" href="../public/css/create-material.css">
     <link rel="icon" href="../public/img/c2.jpg">
-    <title>Thêm học liệu</title>
+    <title>Thêm tài liệu</title>
 </head>
 <body>
     <div id="navbar">
@@ -21,10 +21,10 @@
         </ul>
     </div>
     <div id="content">
-        <h1>Sẵn sàng chia sẻ tài liệu của bạn đến mọi người</h1>
+        <h1>Sẵn sàng chia sẻ tài liệu của bạn</h1>
         <form method="POST" enctype="multipart/form-data">
             <input type="text" name="title" placeholder="Tiêu đề" required>
-            <textarea name="content" placeholder="Mô tả (không bắt buộc)"></textarea>
+            <textarea name="post" placeholder="Mô tả (không bắt buộc)"></textarea>
             <div id="insert">
                 <label for="input-file"><i class="fa"></i> Thêm</label>
                 <input type="file" name="pin-file" id="input-file">
@@ -45,10 +45,11 @@
                 <i class="fa fa-github"></i>
             </a>
             <a class="sns-item" href="mailto:phduongit2k1@gmail.com">
-                <i class="	fa fa-mail-forward"></i>
+                <i class="fa fa-mail-forward"></i>
             </a>
         </div>
     </div>
     <script src="../public/js/main.js"></script>
+    <script src="../public/js/add-file.js"></script>
 </body>
 </html>

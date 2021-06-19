@@ -1,5 +1,6 @@
 #content {
     padding: 4rem 5% 2rem;
+    height: 100vh;
 }
 
 #content h1 {
@@ -37,6 +38,17 @@
     list-style-type: circle;
 }
 
+#content form #list-options .option {
+    position: relative;
+    margin: 0.5rem 0;
+}
+
+#content form #list-options .option span {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
 #content form #list-options .option input[type="text"] {
     box-sizing: border-box;
     border-style: none;
@@ -67,6 +79,7 @@
     font-size: 0.9rem;
     opacity: 0.8;
     cursor: pointer;
+    outline: none;
 }
 
 #content form #post {

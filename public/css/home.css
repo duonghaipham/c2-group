@@ -290,6 +290,7 @@
 
 #content #work #work-container #btn-create-work {
     position: relative;
+    margin-bottom: 0.5rem;
     border: none;
     border-radius: 20px;
     padding: 0.75rem 1rem;
@@ -345,6 +346,48 @@
 #content #work #work-container #list-create li a #task::before {
     content: "\f0ae";
     margin-right: 1rem;
+}
+
+#content #list-posts .material {
+    border-bottom: 1px solid #24292e;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+#content #list-posts .material:hover {
+    border-radius: 10px;
+    border-bottom: none;
+    background-color: #ececec;
+}
+
+#content #list-posts .material .summary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#content #list-posts .material .summary .title {
+    margin: 0.5rem 0;
+    color: #3c4043;
+}
+
+#content #list-posts .material .summary .date-time {
+    margin: 0.5rem 0;
+    color: #737373;
+    font-size: 0.75rem;
+}
+
+#content #list-posts .material .detail {
+    display: none;
+}
+
+#content #list-posts .material .detail hr {
+    margin: 0 -1rem;
+}
+
+#content #list-posts .material .detail .post {
+    margin: 0.5rem 0 0 0;
 }
 
 @media only screen and (max-width: 540px) {

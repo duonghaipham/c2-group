@@ -27,50 +27,28 @@ btnWork.addEventListener("click", (event) => {
 // Default tab is stream
 btnStream.click();
 
-// Add file to post
-const inputFile = document.getElementById("input-file");
-inputFile.addEventListener("change", (event) => {
-    if (event.target.files.length > 0) {
-        const preview = document.createElement("div");
-        preview.setAttribute("id", "preview");
-        
-        const removeFile = document.createElement("span");
-        removeFile.setAttribute("id", "remove-file");
-        removeFile.innerHTML = "&#x2715;";
-
-        const imgOrnament = document.createElement("img");
-        imgOrnament.setAttribute("src", "../public/svg/document.svg");
-        imgOrnament.setAttribute("alt", "File");
-        
-        const fileName = document.createElement("p");
-        fileName.setAttribute("id", "file-name");
-        fileName.innerHTML = event.target.files[0].name;
-
-        preview.appendChild(removeFile);
-        preview.appendChild(imgOrnament);
-        preview.appendChild(fileName);
-
-        const postContent = document.querySelector('textarea[name="post"]');
-        postContent.parentNode.insertBefore(preview, postContent.nextSibling);
-
-        // Remove file
-        removeFile.addEventListener("click", () => {
-            document.getElementById("input-file").value = "";
-            document.getElementById("preview").remove();
-        });
-    }
-});
-
 // Show create pop-up
 const btnCreateWork = document.getElementById("btn-create-work");
 btnCreateWork.addEventListener("click", () => {
     const popUpCreate = document.getElementById("list-create");
     if (popUpCreate.style.display === "block") {
         popUpCreate.style.display = "none";
-        btnCreateWork.style.opacity = "1"
+        btnCreateWork.style.opacity = "1";
     }
     else {
         popUpCreate.style.display = "block";
         btnCreateWork.style.opacity = "0.8";
     }
 });
+
+// Show whole post when click on title
+const listPosts = document.getElementById("list-posts").children;
+for (let i = 0; i < listPosts.length; i++) {
+    listPosts[i].addEventListener("click", (event) => {
+        const currentDetail = event.currentTarget.lastElementChild;
+        if (currentDetail.style.display === "block")
+            currentDetail.style.display = "none";
+        else
+            currentDetail.style.display = "block";
+    });
+}
