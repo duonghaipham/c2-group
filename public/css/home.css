@@ -10,6 +10,7 @@
     border: none;
     margin: 0;
     padding: 0.75rem 1rem;
+    outline: none;
     cursor: pointer;
     background-color: #f1f1f1;
 }
@@ -348,47 +349,85 @@
     margin-right: 1rem;
 }
 
-#content #list-posts .material {
+#content #list-posts .general-post {
     border-bottom: 1px solid #24292e;
     padding: 0.5rem 1rem;
-    cursor: pointer;
 }
 
-#content #list-posts .material:hover {
+#content #list-posts .general-post:hover {
     border-radius: 10px;
     border-bottom: none;
     background-color: #ececec;
 }
 
-#content #list-posts .material .summary {
+#content #list-posts .general-post .summary {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 }
 
-#content #list-posts .material .summary .title {
+#content #list-posts .general-post .summary .title {
     margin: 0.5rem 0;
     color: #3c4043;
 }
 
-#content #list-posts .material .summary .date-time {
+#content #list-posts .general-post .summary .meta-info {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#content #list-posts .general-post .summary .meta-info .date-time {
     margin: 0.5rem 0;
     color: #737373;
     font-size: 0.75rem;
 }
 
-#content #list-posts .material .detail {
+#content #list-posts .general-post .summary .meta-info img {
+    margin-left: 1rem;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+#content #list-posts .general-post .detail {
     display: none;
 }
 
-#content #list-posts .material .detail hr {
+#content #list-posts .general-post .detail hr {
     margin: 0 -1rem;
+    border: none;
+    height: 1px;
+    background: #fff;
 }
 
-#content #list-posts .material .detail .post {
+#content #list-posts .general-post .detail .post {
     margin: 0.5rem 0 0 0;
 }
+
+#content #list-posts .general-post .detail form {
+}
+
+#content #list-posts .general-post .detail form .option {
+    margin: 0.5rem 0;
+}
+
+#content #list-posts .general-post .detail form button {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #24292e;
+    color: #fff;
+}
+
+#content #list-posts .general-post .detail form button:hover {
+    background-color: #404549;
+}
+
 
 @media only screen and (max-width: 540px) {
     #content #stream #stream-container {
@@ -406,5 +445,10 @@
     #content #stream #stream-container #feed {
         padding-top: 1rem;
         padding-left: 0;
+    }
+
+    #content #list-posts .general-post .summary {
+        flex-flow: column wrap;
+        align-items: flex-start;
     }
 }

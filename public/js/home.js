@@ -44,8 +44,8 @@ btnCreateWork.addEventListener("click", () => {
 // Show whole post when click on title
 const listPosts = document.getElementById("list-posts").children;
 for (let i = 0; i < listPosts.length; i++) {
-    listPosts[i].addEventListener("click", (event) => {
-        const currentDetail = event.currentTarget.lastElementChild;
+    listPosts[i].firstElementChild.addEventListener("click", (event) => {
+        const currentDetail = event.currentTarget.nextElementSibling;
         if (currentDetail.style.display === "block")
             currentDetail.style.display = "none";
         else
