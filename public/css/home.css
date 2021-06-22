@@ -370,7 +370,7 @@
 }
 
 #content #list-posts .general-post .summary .title {
-    margin: 0.5rem 0;
+    margin: 0;
     color: #3c4043;
 }
 
@@ -382,7 +382,7 @@
 }
 
 #content #list-posts .general-post .summary .meta-info .date-time {
-    margin: 0.5rem 0;
+    margin: 0;
     color: #737373;
     font-size: 0.75rem;
 }
@@ -398,7 +398,7 @@
 }
 
 #content #list-posts .general-post .detail hr {
-    margin: 0 -1rem;
+    margin: 0.5rem -1rem;
     border: none;
     height: 1px;
     background: #fff;
