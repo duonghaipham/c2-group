@@ -1,5 +1,5 @@
 <?php
-class UserModel {
+class MemberModel {
 
     public function __construct() {
 

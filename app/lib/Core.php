@@ -1,8 +1,8 @@
 <?php
 class Core {    // /controller/method/params
 
-    protected $current_controller = 'User';
-    protected $current_method = 'index';
+    protected $current_controller;
+    protected $current_method;
     protected $params = [];
 
     public function __construct(){
@@ -31,8 +31,10 @@ class Core {    // /controller/method/params
             $url = rtrim($_GET['url'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
+            if (count($url) == 1)
+                array_unshift($url, 'page');
             return $url;
         }
-        return false;
+        return ['member', 'index'];
     }
 }

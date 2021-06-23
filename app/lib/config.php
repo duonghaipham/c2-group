@@ -6,5 +6,5 @@ define('DB_PASS', '');
 define('DB_NAME', 'c2_group');
 
 // Path params
-define('URLROOT', 'http://localhost/c2-group');
+define('URLROOT', 'http://192.168.0.102/c2-group');
 define('APPROOT', dirname(dirname(__FILE__)));  // C:\xampp\htdocs\c2-group
