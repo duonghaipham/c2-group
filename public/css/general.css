@@ -104,6 +104,10 @@ a {
         flex-direction: column;
     }
 
+    #navbar .show {
+        display: flex !important;
+    }
+
     #footer {
         flex-direction: column-reverse;
         align-items: flex-start;

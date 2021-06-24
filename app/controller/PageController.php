@@ -2,14 +2,23 @@
 class PageController extends Controller {
 
     public function home() {
-        $this->view('home', []);
+        if (isset($_SESSION['student_id']))
+            $this->view('home', []);
+        else
+            header('Location:' . URLROOT);
     }
 
     public function member() {
-        $this->view('member', []);
+        if (isset($_SESSION['student_id']))
+            $this->view('member', []);
+        else
+            header('Location:' . URLROOT);
     }
 
     public function about() {
-        $this->view('about', []);
+        if (isset($_SESSION['student_id']))
+            $this->view('about', []);
+        else
+            header('Location:' . URLROOT);
     }
 }
