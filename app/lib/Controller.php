@@ -7,6 +7,8 @@ class Controller {
     }
 
     public function view($view, $data = []) {
+        foreach ($data as $key => $value)
+            $$key = $value;
         if (file_exists('app/view/' . $view . '.php'))
             require_once 'app/view/' . $view . '.php';
         else

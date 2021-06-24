@@ -31,7 +31,7 @@
                 </div>
                 <div id="feed">
                     <?php
-                    require 'post/create.html';
+                    require 'post/create.php';
                     require 'post/get-list.php';
                     ?>
                 </div>

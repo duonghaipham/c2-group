@@ -52,3 +52,16 @@ for (let i = 0; i < listPosts.length; i++) {
             currentDetail.style.display = "block";
     });
 }
+
+// Send comment to server
+const makeComment = (obj, postUrl) => {
+    const request = new XMLHttpRequest();
+    request.open('POST', postUrl, true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.send('comment=' + obj.firstElementChild.value);
+    request.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            obj.firstElementChild.value = "";
+        }
+    };
+};

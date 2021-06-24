@@ -171,6 +171,7 @@
 }
 
 #content #stream #stream-container #feed #list-post .single-post {
+    margin-bottom: 1rem;
     border: 1px solid #e1e4e8;
     border-radius: 10px;
     padding: 1.5rem;
@@ -276,7 +277,7 @@
     border: 1.5px solid #24292e;
 }
 
-#content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment input[type="submit"] {
+#content #stream #stream-container #feed #list-post .single-post .my-comment .make-comment button {
     display: none;
 }
 

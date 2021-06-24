@@ -1,45 +1,43 @@
 <div id="list-post">
+    <?php foreach ($post_data as $post): ?>
     <div class="single-post">
         <div class="owner">
-            <a href="#"><img src="<?php echo URLROOT ?>/data/img/HaiDuong.png" alt="Avatar"></a>
+            <a href="<?php echo URLROOT . '/member/watch/' . $post->creator; ?>">
+                <img src="<?php echo URLROOT . '/data/img/' . $post->avatar; ?>" alt="Avatar">
+            </a>
             <div class="further-info">
-                <p class="name">Dương Phạm Hải</p>
-                <p class="time">Hôm qua</p>
+                <p class="name"><?php echo $post->name; ?></p>
+                <p class="time"><?php echo $post->created_at; ?></p>
             </div>
         </div>
         <div class="main-post">
-            <p>Nội dung bài đăng</p>
+            <p><?php echo $post->content; ?></p>
         </div>
         <hr>
+        <?php foreach ($post->comments as $comment): ?>
         <div class="list-comment">
             <div class="single-comment">
-                <a href="#"><img src="<?php echo URLROOT ?>/data/img/HaiDuong.png" alt="Avatar"></a>
+                <a href="<?php echo URLROOT . '/member/watch/' . $comment->creator; ?>">
+                    <img src="<?php echo URLROOT . '/data/img/' . $comment->avatar; ?>" alt="Avatar">
+                </a>
                 <div class="cmt-body">
                     <div class="cmt-header">
-                        <p class="cmt-name">Dương Phạm Hải</p>
-                        <p class="cmt-time">17/06/2020 22:27</p>
+                        <p class="cmt-name"><?php echo $comment->name; ?></p>
+                        <p class="cmt-time"><?php echo $comment->created_at; ?></p>
                     </div>
-                    <p class="cmt-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                </div>
-            </div>
-            <div class="single-comment">
-                <a href="#"><img src="<?php echo URLROOT ?>/data/img/HaiDuong.png" alt="Avatar"></a>
-                <div class="cmt-body">
-                    <div class="cmt-header">
-                        <p class="cmt-name">Dương Phạm Hải</p>
-                        <p class="cmt-time">17/06/2020 22:27</p>
-                    </div>
-                    <p class="cmt-content">Đề nghị các anh đóng góp bình luận</p>
+                    <p class="cmt-content"><?php echo $comment->content; ?></p>
                 </div>
             </div>
         </div>
+        <?php endforeach; ?>
         <hr id="hr-list-comment">
         <div class="my-comment">
-            <img src="<?php echo URLROOT ?>/data/img/HaiDuong.png" alt="Avatar">
-            <form class="make-comment" method="POST">
+            <img src="<?php echo URLROOT ?>/data/img/HaiDuong.png" alt="Avatar"><!--se lay trong session-->
+            <form class="make-comment" method="POST" onsubmit="makeComment(this, '<?php echo URLROOT . '/post/comment/' . $post->post_id; ?>'); return false; ">
                 <input type="text" name="comment" placeholder="Để lại bình luận...">
-                <input type="submit">
+                <button type="button" id="btn-make-comment">
             </form>
         </div>
     </div>
+    <?php endforeach; ?>
 </div>
