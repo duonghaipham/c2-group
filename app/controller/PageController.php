@@ -2,9 +2,11 @@
 class PageController extends Controller {
 
     private $post_model;
+    private $member_model;
 
     public function __construct() {
         $this->post_model = $this->model('PostModel');
+        $this->member_model = $this->model('MemberModel');
     }
 
     public function home() {
@@ -17,8 +19,10 @@ class PageController extends Controller {
     }
 
     public function member() {
-        if (isset($_SESSION['student_id']))
-            $this->view('member', []);
+        if (isset($_SESSION['student_id'])) {
+            $list_members = $this->member_model->get_list();
+            $this->view('member', ['list_members' => $list_members]);
+        }
         else
             header('Location:' . URLROOT);
     }

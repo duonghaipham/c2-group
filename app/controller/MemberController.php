@@ -32,7 +32,12 @@ class MemberController extends Controller {
         header('Location:' . URLROOT);
     }
 
-    public function watch() {
-        $this->view('profile', []);
+    public function watch($student_id) {
+        if (isset($_SESSION['student_id'])) {
+            $profile_data = $this->member_model->watch($student_id ?? $_SESSION['student_id']);
+            $this->view('profile', ['profile_data' => $profile_data]);
+        }
+        else
+            header('Location:' . URLROOT);
     }
 }
