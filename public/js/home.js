@@ -61,7 +61,58 @@ const makeComment = (obj, postUrl) => {
     request.send('comment=' + obj.firstElementChild.value);
     request.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
+
+            // clear text comment
             obj.firstElementChild.value = "";
+
+            // parser xml string to DOM
+            const parser = new DOMParser();
+            const response = parser.parseFromString(this.responseText,"text/xml");
+
+            const singleComment = document.createElement("div");
+            singleComment.classList.add("single-comment");
+
+            // avatar link to profile
+            const anchorProfile = document.createElement("a");
+            anchorProfile.href = response.getElementsByTagName("creator")[0].textContent;
+            const imgAvatar = document.createElement("img");
+            imgAvatar.src = response.getElementsByTagName("avatar")[0].textContent;
+            imgAvatar.alt = "Avatar";
+
+            anchorProfile.appendChild(imgAvatar);
+
+            // the body of comment
+            const commentBody = document.createElement("div");
+            commentBody.classList.add("cmt-body");
+
+            // name and time of comment
+            const commentHeader = document.createElement("div");
+            commentHeader.classList.add("cmt-header");
+
+            const commentName = document.createElement("p");
+            commentName.classList.add("cmt-name");
+            commentName.innerHTML = response.getElementsByTagName('name')[0].textContent;
+            const commentTime = document.createElement("p");
+            commentTime.classList.add("cmt-time");
+            commentTime.innerHTML = response.getElementsByTagName('created_at')[0].textContent;
+
+            commentHeader.appendChild(commentName);
+            commentHeader.appendChild(commentTime);
+
+            // content of comment
+            const commentContent = document.createElement("p");
+            commentContent.classList.add("cmt-content");
+            commentContent.innerHTML = response.getElementsByTagName('content')[0].textContent;
+
+            commentBody.appendChild(commentHeader);
+            commentBody.appendChild(commentContent);
+
+            singleComment.appendChild(anchorProfile);
+            singleComment.appendChild(commentBody);
+
+            // go up two parents
+            const listComments = obj.parentElement.parentElement.getElementsByClassName("list-comment")[0];
+            listComments.appendChild(singleComment);
         }
     };
 };

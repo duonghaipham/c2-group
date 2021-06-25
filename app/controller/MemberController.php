@@ -19,7 +19,10 @@ class MemberController extends Controller {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $success = $this->member_model->login($_POST['username'], $_POST['password']);
             if ($success) {
+                $current = $this->member_model->watch($_POST['username']);
                 $_SESSION['student_id'] = $_POST['username'];
+                $_SESSION['name'] = $current->name;
+                $_SESSION['avatar'] = $current->avatar;
                 header('Location:' . URLROOT . '/home');
             }
             else

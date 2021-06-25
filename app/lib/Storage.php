@@ -29,7 +29,15 @@ class Storage {
         return false;
     }
 
-    public function remove_file($path) {
+    public function array_to_xml($array, $root_element = null, $xml = null) {
+        if (!isset($xml))
+            $xml = new SimpleXMLElement($root_element ?? '<root/>');
 
+        foreach ($array as $key => $value)
+            if (is_array($value))
+                $this->array_to_xml($value, $key, $xml->addChild($key));
+            else
+                $xml->addChild($key, $value);
+        return $xml->asXML();
     }
 }

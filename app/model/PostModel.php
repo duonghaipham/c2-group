@@ -52,16 +52,32 @@ class PostModel {
         $this->db->bind(':post_id', $post_id);
         $this->db->bind(':content', $content);
         $this->db->execute();
+
+        $get_last_comment_id_query = 'SELECT LAST_INSERT_ID() AS comment_id';
+        $this->db->query($get_last_comment_id_query);
+        return $this->db->single()->comment_id;
     }
 
     public function get_comments($post_id) {
         $get_comment_query =
             'SELECT c.*, m.name, m.avatar ' .
             'FROM comment c JOIN member m ON c.creator = m.student_id ' .
-            'WHERE c.post_id = :post_id';
+            'WHERE c.post_id = :post_id ' .
+            'ORDER BY c.comment_id';
         $this->db->query($get_comment_query);
         $this->db->bind(':post_id', $post_id);
 
         return $this->db->result_set();
+    }
+
+    public function get_comment_by_id($comment_id) {
+        $get_comment_query =
+            'SELECT c.*, m.name, m.avatar ' .
+            'FROM comment c JOIN member m ON c.creator = m.student_id ' .
+            'WHERE c.comment_id = :comment_id ';
+        $this->db->query($get_comment_query);
+        $this->db->bind(':comment_id', $comment_id);
+
+        return $this->db->single();
     }
 }

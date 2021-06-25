@@ -1,6 +1,6 @@
 <div id="list-post">
     <?php foreach ($post_data as $post): ?>
-    <div class="single-post">
+    <div class="single-post" id="post-<?php echo $post->post_id; ?>">
         <div class="owner">
             <a href="<?php echo URLROOT . '/member/watch/' . $post->creator; ?>">
                 <img src="<?php echo URLROOT . '/data/img/' . $post->avatar; ?>" alt="Avatar">
@@ -14,8 +14,9 @@
             <p><?php echo $post->content; ?></p>
         </div>
         <hr>
-        <?php foreach ($post->comments as $comment): ?>
+
         <div class="list-comment">
+            <?php foreach ($post->comments as $comment): ?>
             <div class="single-comment">
                 <a href="<?php echo URLROOT . '/member/watch/' . $comment->creator; ?>">
                     <img src="<?php echo URLROOT . '/data/img/' . $comment->avatar; ?>" alt="Avatar">
@@ -28,11 +29,11 @@
                     <p class="cmt-content"><?php echo $comment->content; ?></p>
                 </div>
             </div>
+            <?php endforeach; ?>
         </div>
-        <?php endforeach; ?>
         <hr id="hr-list-comment">
         <div class="my-comment">
-            <img src="<?php echo URLROOT ?>/data/img/HaiDuong.png" alt="Avatar"><!--se lay trong session-->
+            <img src="<?php echo URLROOT . '/data/img/' . $_SESSION['avatar']; ?>" alt="Avatar"><!--se lay trong session-->
             <form class="make-comment" method="POST" onsubmit="makeComment(this, '<?php echo URLROOT . '/post/comment/' . $post->post_id; ?>'); return false; ">
                 <input type="text" name="comment" placeholder="Để lại bình luận...">
                 <button type="button" id="btn-make-comment">
