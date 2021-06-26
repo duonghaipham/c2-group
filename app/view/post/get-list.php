@@ -12,6 +12,9 @@
         </div>
         <div class="main-post">
             <p><?php echo $post->content; ?></p>
+            <?php if (isset($post->file)): ?>
+                <p><a href="<?php echo URLROOT . '/data/post/' . $post->file; ?>"><?php echo $post->old_name; ?></a></p>
+            <?php endif; ?>
         </div>
         <hr>
 

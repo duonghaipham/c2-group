@@ -22,8 +22,9 @@ class MaterialModel {
 
     public function get_all() {
         $get_materials_query =
-            'SELECT material.*, member.name, member.avatar ' .
+            'SELECT material.*, member.name, member.avatar, storage.old_name ' .
             'FROM material JOIN member ON material.creator = member.student_id ' .
+            'LEFT JOIN storage ON material.file = storage.new_name ' .
             'ORDER BY material.material_id DESC';
         $this->db->query($get_materials_query);
         return $this->db->result_set();

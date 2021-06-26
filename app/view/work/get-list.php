@@ -14,6 +14,9 @@
             <div class="detail">
                 <hr>
                 <p class="post"><?php echo $work->description; ?></p>
+                <?php if (isset($work->file)): ?>
+                    <a href="<?php echo URLROOT . '/data/material/' . $work->file; ?>"><?php echo $work->old_name; ?></a>
+                <?php endif; ?>
             </div>
         </div>
     <?php else: ?>
@@ -22,7 +25,9 @@
                 <p class="title"><?php echo $work->title; ?></p>
                 <div class="meta-info">
                     <p class="date-time">Đăng vào <?php echo $work->created_at; ?></p>
-                    <img src="<?php echo URLROOT . '/data/img/' . $work->avatar; ?>" alt="Avatar of post creator">
+                    <a href="<?php echo URLROOT . '/member/watch/' . $work->creator; ?>">
+                        <img src="<?php echo URLROOT . '/data/img/' . $work->avatar; ?>" alt="Avatar of post creator">
+                    </a>
                 </div>
             </div>
             <div class="detail">

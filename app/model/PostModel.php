@@ -21,8 +21,9 @@ class PostModel {
 
     public function get_all() {
         $get_all_posts_query =
-            'SELECT p.*, m.name, m.avatar ' .
+            'SELECT p.*, m.name, m.avatar, s.old_name ' .
             'FROM post p JOIN member m ON p.creator = m.student_id ' .
+            'LEFT JOIN storage s ON p.file = s.new_name ' .
             'ORDER BY p.post_id DESC';
         $this->db->query($get_all_posts_query);
 
