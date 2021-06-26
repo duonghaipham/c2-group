@@ -8,15 +8,7 @@ class PostModel {
     }
 
     public function create($student_id, $content, $file) {
-        if ($file) {
-            $add_file_query = 'INSERT INTO storage (owner, new_name, old_name) ' .
-                'VALUES (:owner, :new_name, :old_name)';
-            $this->db->query($add_file_query);
-            $this->db->bind(':owner', $student_id);
-            $this->db->bind(':new_name', $file['new_name']);
-            $this->db->bind(':old_name', $file['old_name']);
-            $this->db->execute();
-        }
+        Storage::get_instance()->write_file_to_db($this->db, $file, $student_id);
 
         $create_post_query = 'INSERT INTO post (creator, file, content) ' .
             'VALUES (:creator, :file, :content)';

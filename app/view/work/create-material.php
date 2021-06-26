@@ -1,6 +1,6 @@
 <div id="content">
     <h1>Sẵn sàng chia sẻ tài liệu của bạn</h1>
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" action="<?php echo URLROOT . '/material/add'; ?>">
         <input type="text" name="title" placeholder="Tiêu đề" required>
         <textarea name="post" placeholder="Mô tả (không bắt buộc)"></textarea>
         <div id="insert">

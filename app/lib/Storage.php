@@ -29,6 +29,19 @@ class Storage {
         return false;
     }
 
+    public function write_file_to_db($db, $file, $creator) {
+        if ($file) {
+            $add_file_query =
+                'INSERT INTO storage (owner, new_name, old_name) ' .
+                'VALUES (:owner, :new_name, :old_name)';
+            $db->query($add_file_query);
+            $db->bind(':owner', $creator);
+            $db->bind(':new_name', $file['new_name']);
+            $db->bind(':old_name', $file['old_name']);
+            $db->execute();
+        }
+    }
+
     public function array_to_xml($array, $root_element = null, $xml = null) {
         if (!isset($xml))
             $xml = new SimpleXMLElement($root_element ?? '<root/>');

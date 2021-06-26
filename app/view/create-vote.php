@@ -13,7 +13,7 @@
 <body>
     <?php
     require 'include/navbar.php';
-    require 'work/create-poll.html';
+    require 'work/create-poll.php';
     require 'include/footer.html';
     ?>
     <script src="<?php echo URLROOT; ?>/public/js/main.js"></script>

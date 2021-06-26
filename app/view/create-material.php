@@ -13,7 +13,7 @@
 <body>
     <?php
     require 'include/navbar.php';
-    require 'work/create-material.html';
+    require 'work/create-material.php';
     require 'include/footer.html';
     ?>
     <script src="<?php echo URLROOT; ?>/public/js/main.js"></script>
