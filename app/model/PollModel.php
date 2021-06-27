@@ -60,4 +60,34 @@ class PollModel {
 
         return $this->db->result_set();
     }
+
+    public function make($poll_id, $choice_id, $student_id) {
+        $do_poll_query =
+            'INSERT INTO choosing(student_id, poll_id, choice_id) ' .
+            'VALUES (:student_id, :poll_id, :choice_id)';
+        $this->db->query($do_poll_query);
+        $this->db->bind(':student_id', $student_id);
+        $this->db->bind(':poll_id', $poll_id);
+        $this->db->bind(':choice_id', $choice_id);
+        $this->db->execute();
+
+        $poll_data = $this->get_result($poll_id);
+        for ($i = 0; $i < count($poll_data); $i++) {
+            $poll_data[$i] = (array) $poll_data[$i];
+            $poll_data['_' . $i] = $poll_data[$i];
+            unset($poll_data[$i]);
+        }
+        return $poll_data;
+    }
+
+    public function get_result($poll_id) {
+        $get_poll_result_query =
+            'SELECT * ' .
+            'FROM choosing ' .
+            'WHERE poll_id = :poll_id';
+        $this->db->query($get_poll_result_query);
+        $this->db->bind(':poll_id', $poll_id);
+
+        return $this->db->result_set();
+    }
 }

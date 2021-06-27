@@ -28,4 +28,20 @@ class PollController extends Controller {
             }
         }
     }
+
+    public function make($poll_id) {
+        if (isset($_SESSION['student_id'])) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+                $choice_data = $this->poll_model->make(
+                    $poll_id,
+                    $_POST['option'],
+                    $_SESSION['student_id']
+                );
+                $response = Storage::get_instance()->array_to_xml($choice_data);
+                echo $response;
+            }
+        }
+    }
 }

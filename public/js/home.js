@@ -116,3 +116,41 @@ const makeComment = (obj, postUrl) => {
         }
     };
 };
+
+const listPolls = document.getElementsByClassName("poll");
+for (let poll of listPolls) {
+    poll.addEventListener("submit", (event) => {
+        const obj = event.currentTarget;
+        const currentUrl = urlPoll + obj.getAttribute("id").split("-")[1];
+        const request = new XMLHttpRequest();
+        request.open('POST', currentUrl, true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        request.send('option=' + obj.querySelector(':checked').value);
+        request.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                const parser = new DOMParser();
+                const response = parser.parseFromString(this.responseText,"text/xml");
+
+                const list_choices = response.getElementsByTagName("choice_id");
+                const choice_value = [];
+                for (let choice of list_choices) {
+                    choice_value.push(parseInt(choice.textContent));
+                }
+
+                const frequency = choice_value.reduce((frequency, current) => {
+                    if (typeof frequency[current] == 'undefined')
+                        frequency[current] = 1;
+                    else
+                        frequency[current] += 1;
+                    return frequency;
+                }, {});
+
+                console.log(list_choices);
+                console.log(choice_value);
+                console.log(frequency);
+            }
+        };
+        event.preventDefault();
+        return false;
+    });
+}

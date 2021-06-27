@@ -53,6 +53,9 @@
     <?php
     require 'include/footer.html';
     ?>
+    <script>
+        const urlPoll = "<?php echo URLROOT . '/poll/make/'; ?>";
+    </script>
     <script src="<?php echo URLROOT; ?>/public/js/main.js"></script>
     <script src="<?php echo URLROOT; ?>/public/js/home.js"></script>
     <script src="<?php echo URLROOT; ?>/public/js/add-file.js"></script>

@@ -32,14 +32,14 @@
             </div>
             <div class="detail">
                 <hr>
-                <form method="POST">
+                <form method="POST" id="poll-<?php echo $work->poll_id; ?>" class="poll">
                     <?php foreach ($work->choice as $choice): ?>
                     <div class="option">
-                        <input type="radio" name="option" id="option-<?php echo $choice->choice_id; ?>">
+                        <input type="radio" name="option" id="option-<?php echo $choice->choice_id; ?>" value="<?php echo $choice->choice_id; ?>">
                         <label for="option-<?php echo $choice->choice_id; ?>"><?php echo $choice->content; ?></label>
                     </div>
                     <?php endforeach; ?>
-                    <button type="button">Xem kết quả</button>
+                    <button type="submit" >Xem kết quả</button>
                 </form>
             </div>
         </div>
