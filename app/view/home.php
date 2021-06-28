@@ -21,14 +21,9 @@
         </div>
         <div class="tab-content" id="stream">
             <div id="stream-container">
-                <div id="due-work">
-                    <h3>Deadline</h3>
-                    <ul>
-                        <li><a href="#">Nộp video demo</a></li>
-                        <li><a href="#">Nộp báo cáo tuần</a></li>
-                    </ul>
-                    <button type="button">Xem việc...</button>
-                </div>
+                <?php
+                require 'page/deadline.html';
+                ?>
                 <div id="feed">
                     <?php
                     require 'post/create.php';
@@ -54,6 +49,7 @@
     require 'include/footer.html';
     ?>
     <script>
+        const urlComment = "<?php echo URLROOT . '/post/comment/'; ?>";
         const urlPoll = "<?php echo URLROOT . '/poll/make/'; ?>";
     </script>
     <script src="<?php echo URLROOT; ?>/public/js/main.js"></script>

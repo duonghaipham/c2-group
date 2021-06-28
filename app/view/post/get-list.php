@@ -37,7 +37,7 @@
         <hr id="hr-list-comment">
         <div class="my-comment">
             <img src="<?php echo URLROOT . '/data/img/' . $_SESSION['avatar']; ?>" alt="Avatar">
-            <form class="make-comment" method="POST" onsubmit="makeComment(this, '<?php echo URLROOT . '/post/comment/' . $post->post_id; ?>'); return false; ">
+            <form class="make-comment" method="POST" id="comment-<?php echo $post->post_id; ?>">
                 <input type="text" name="comment" placeholder="Để lại bình luận...">
                 <button type="button" id="btn-make-comment">
             </form>

@@ -11,7 +11,7 @@ inputFile.addEventListener("change", (event) => {
 
         const imgOrnament = document.createElement("img");
         const src = event.target.files[0].type.includes("image") ?
-            URL.createObjectURL(event.target.files[0]) : "../public/svg/document.svg";
+            URL.createObjectURL(event.target.files[0]) : "../svg/document.svg";
         imgOrnament.setAttribute("src", src);
         imgOrnament.setAttribute("alt", "File");
         

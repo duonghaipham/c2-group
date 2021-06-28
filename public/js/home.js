@@ -54,69 +54,78 @@ for (let i = 0; i < listPosts.length; i++) {
 }
 
 // Send comment to server
-const makeComment = (obj, postUrl) => {
-    const request = new XMLHttpRequest();
-    request.open('POST', postUrl, true);
-    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    request.send('comment=' + obj.firstElementChild.value);
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
+const listComments = document.getElementsByClassName("make-comment");
+for (let comment of listComments) {
+    comment.addEventListener("submit", (event) => {
+        const obj = event.currentTarget;
 
-            // clear text comment
-            obj.firstElementChild.value = "";
+        const currentUrl = urlComment + obj.getAttribute("id").split("-")[1];
+        const request = new XMLHttpRequest();
+        request.open('POST', currentUrl, true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        request.send('comment=' + obj.firstElementChild.value);
+        request.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
 
-            // parser xml string to DOM
-            const parser = new DOMParser();
-            const response = parser.parseFromString(this.responseText,"text/xml");
+                // clear text comment
+                obj.firstElementChild.value = "";
 
-            const singleComment = document.createElement("div");
-            singleComment.classList.add("single-comment");
+                // parser xml string to DOM
+                const parser = new DOMParser();
+                const response = parser.parseFromString(this.responseText, "text/xml");
 
-            // avatar link to profile
-            const anchorProfile = document.createElement("a");
-            anchorProfile.href = response.getElementsByTagName("creator")[0].textContent;
-            const imgAvatar = document.createElement("img");
-            imgAvatar.src = response.getElementsByTagName("avatar")[0].textContent;
-            imgAvatar.alt = "Avatar";
+                const singleComment = document.createElement("div");
+                singleComment.classList.add("single-comment");
 
-            anchorProfile.appendChild(imgAvatar);
+                // avatar link to profile
+                const anchorProfile = document.createElement("a");
+                anchorProfile.href = response.getElementsByTagName("creator")[0].textContent;
+                const imgAvatar = document.createElement("img");
+                imgAvatar.src = response.getElementsByTagName("avatar")[0].textContent;
+                imgAvatar.alt = "Avatar";
 
-            // the body of comment
-            const commentBody = document.createElement("div");
-            commentBody.classList.add("cmt-body");
+                anchorProfile.appendChild(imgAvatar);
 
-            // name and time of comment
-            const commentHeader = document.createElement("div");
-            commentHeader.classList.add("cmt-header");
+                // the body of comment
+                const commentBody = document.createElement("div");
+                commentBody.classList.add("cmt-body");
 
-            const commentName = document.createElement("p");
-            commentName.classList.add("cmt-name");
-            commentName.innerHTML = response.getElementsByTagName('name')[0].textContent;
-            const commentTime = document.createElement("p");
-            commentTime.classList.add("cmt-time");
-            commentTime.innerHTML = response.getElementsByTagName('created_at')[0].textContent;
+                // name and time of comment
+                const commentHeader = document.createElement("div");
+                commentHeader.classList.add("cmt-header");
 
-            commentHeader.appendChild(commentName);
-            commentHeader.appendChild(commentTime);
+                const commentName = document.createElement("p");
+                commentName.classList.add("cmt-name");
+                commentName.innerHTML = response.getElementsByTagName('name')[0].textContent;
+                const commentTime = document.createElement("p");
+                commentTime.classList.add("cmt-time");
+                commentTime.innerHTML = response.getElementsByTagName('created_at')[0].textContent;
 
-            // content of comment
-            const commentContent = document.createElement("p");
-            commentContent.classList.add("cmt-content");
-            commentContent.innerHTML = response.getElementsByTagName('content')[0].textContent;
+                commentHeader.appendChild(commentName);
+                commentHeader.appendChild(commentTime);
 
-            commentBody.appendChild(commentHeader);
-            commentBody.appendChild(commentContent);
+                // content of comment
+                const commentContent = document.createElement("p");
+                commentContent.classList.add("cmt-content");
+                commentContent.innerHTML = response.getElementsByTagName('content')[0].textContent;
 
-            singleComment.appendChild(anchorProfile);
-            singleComment.appendChild(commentBody);
+                commentBody.appendChild(commentHeader);
+                commentBody.appendChild(commentContent);
 
-            // go up two parents
-            const listComments = obj.parentElement.parentElement.getElementsByClassName("list-comment")[0];
-            listComments.appendChild(singleComment);
-        }
-    };
-};
+                singleComment.appendChild(anchorProfile);
+                singleComment.appendChild(commentBody);
 
+                // go up two parents
+                const listComments = obj.parentElement.parentElement.getElementsByClassName("list-comment")[0];
+                listComments.appendChild(singleComment);
+            }
+        };
+        event.preventDefault();
+        return false;
+    });
+}
+
+// Make a poll and receive result
 const listPolls = document.getElementsByClassName("poll");
 for (let poll of listPolls) {
     poll.addEventListener("submit", (event) => {
@@ -139,6 +148,7 @@ for (let poll of listPolls) {
                     listOptions[i].appendChild(amount);
                 }
 
+                // Disable all radio button and remove the button submit
                 for (let i = 0; i < listOptions.length; i++)
                     listOptions[i].firstElementChild.disabled = true;
                 obj.lastElementChild.remove();
