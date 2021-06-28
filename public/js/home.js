@@ -131,23 +131,17 @@ for (let poll of listPolls) {
                 const parser = new DOMParser();
                 const response = parser.parseFromString(this.responseText,"text/xml");
 
-                const list_choices = response.getElementsByTagName("choice_id");
-                const choice_value = [];
-                for (let choice of list_choices) {
-                    choice_value.push(parseInt(choice.textContent));
+                const listOptions = obj.getElementsByClassName("option");
+                const listFrequencies = response.getElementsByTagName("frequency");
+                for (let i = 0; i < listOptions.length; i++) {
+                    const amount = document.createElement("span");
+                    amount.innerHTML = listFrequencies[i].textContent + " lượt chọn";
+                    listOptions[i].appendChild(amount);
                 }
 
-                const frequency = choice_value.reduce((frequency, current) => {
-                    if (typeof frequency[current] == 'undefined')
-                        frequency[current] = 1;
-                    else
-                        frequency[current] += 1;
-                    return frequency;
-                }, {});
-
-                console.log(list_choices);
-                console.log(choice_value);
-                console.log(frequency);
+                for (let i = 0; i < listOptions.length; i++)
+                    listOptions[i].firstElementChild.disabled = true;
+                obj.lastElementChild.remove();
             }
         };
         event.preventDefault();

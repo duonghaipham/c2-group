@@ -33,13 +33,38 @@
             <div class="detail">
                 <hr>
                 <form method="POST" id="poll-<?php echo $work->poll_id; ?>" class="poll">
-                    <?php foreach ($work->choice as $choice): ?>
+                    <?php
+                    if (isset($work->choice['my_choice'])) {
+                        $my_choice = $work->choice['my_choice'];
+                        $choice_size = count($work->choice) - 1;
+                    }
+                    else
+                        $choice_size = count($work->choice);
+                    for ($i = 0; $i < $choice_size; $i++):
+                    $choice = $work->choice[$i];
+                    ?>
                     <div class="option">
+                        <?php
+                        if (isset($my_choice)):
+                            if ($my_choice == $i):
+                            ?>
+                        <input type="radio" name="option" id="option-<?php echo $choice->choice_id; ?>" value="<?php echo $choice->choice_id; ?>" checked disabled>
+                            <?php else: ?>
+                            <input type="radio" name="option" id="option-<?php echo $choice->choice_id; ?>" value="<?php echo $choice->choice_id; ?>" disabled>
+                            <?php endif; ?>
+                        <label for="option-<?php echo $choice->choice_id; ?>"><?php echo $choice->content; ?></label>
+                        <span><?php echo $choice->frequency; ?> lượt chọn</span>
+                        <?php else: ?>
                         <input type="radio" name="option" id="option-<?php echo $choice->choice_id; ?>" value="<?php echo $choice->choice_id; ?>">
                         <label for="option-<?php echo $choice->choice_id; ?>"><?php echo $choice->content; ?></label>
+                        <?php endif; ?>
                     </div>
-                    <?php endforeach; ?>
-                    <button type="submit" >Xem kết quả</button>
+                    <?php endfor;
+                    if (!isset($my_choice))
+                        echo '<button type="submit" >Xem kết quả</button>';
+                    else
+                        unset($my_choice);
+                    ?>
                 </form>
             </div>
         </div>

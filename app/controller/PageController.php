@@ -17,7 +17,7 @@ class PageController extends Controller {
         if (isset($_SESSION['student_id'])) {
             $post_data = $this->post_model->get_all();
             $material_data = $this->material_model->get_all();
-            $poll_data = $this->poll_model->get_all();
+            $poll_data = $this->poll_model->get_all($_SESSION['student_id']);
             $work_data = array_merge((array) $material_data, (array) $poll_data);
             usort($work_data, fn($lhs, $rhs) => strcmp($lhs->created_at, $rhs->created_at) < 0);
             $this->view('home', ['post_data' => $post_data, 'work_data' => $work_data]);
